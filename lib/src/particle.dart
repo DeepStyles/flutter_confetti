@@ -6,7 +6,7 @@ import 'package:random_color/random_color.dart';
 import 'package:vector_math/vector_math.dart' as vmath;
 
 import 'package:confetti/src/helper.dart';
-
+// import 'package:';
 import 'enums/blast_directionality.dart';
 
 enum ParticleSystemStatus {
@@ -228,13 +228,26 @@ class Particle {
         _acceleration = vmath.Vector2.zero(),
         _velocity = vmath.Vector2(randomize(-3, 3), randomize(-3, 3)),
         // _size = size,
-        _pathShape = createPath(size),
+        // _pathShape = createPath,
+        _pathShape = functions[Random().nextInt(9)](size),
         _aVelocityX = randomize(-0.1, 0.1),
         _aVelocityY = randomize(-0.1, 0.1),
         _aVelocityZ = randomize(-0.1, 0.1),
         _gravity = lerpDouble(0.1, 5, gravity);
 
   final vmath.Vector2 _startUpForce;
+
+  static List<Function> functions = [
+    retPath1,
+    retPath2,
+    retPath3,
+    retPath4,
+    retPath5,
+    retPath6,
+    retPath7,
+    retPath8,
+    retPath9,
+  ];
 
   final vmath.Vector2 _location;
   final vmath.Vector2 _velocity;
@@ -329,4 +342,149 @@ class Particle {
   double get angleX => _aX;
   double get angleY => _aY;
   double get angleZ => _aZ;
+
+  static Path retPath9(Size size) {
+    Path path_0 = Path();
+    path_0.moveTo(size.width * 0.38, size.height * 0.75);
+    path_0.quadraticBezierTo(size.width * 0.40, size.height * 0.75,
+        size.width * 0.50, size.height * 0.75);
+    path_0.cubicTo(size.width * 0.58, size.height * 0.73, size.width * 0.60,
+        size.height * 0.68, size.width * 0.63, size.height * 0.63);
+    path_0.cubicTo(size.width * 0.63, size.height * 0.54, size.width * 0.63,
+        size.height * 0.46, size.width * 0.63, size.height * 0.38);
+    path_0.cubicTo(size.width * 0.63, size.height * 0.30, size.width * 0.55,
+        size.height * 0.25, size.width * 0.50, size.height * 0.25);
+    path_0.cubicTo(size.width * 0.46, size.height * 0.25, size.width * 0.38,
+        size.height * 0.28, size.width * 0.38, size.height * 0.38);
+    path_0.cubicTo(size.width * 0.38, size.height * 0.45, size.width * 0.42,
+        size.height * 0.50, size.width * 0.50, size.height * 0.50);
+    path_0.quadraticBezierTo(size.width * 0.58, size.height * 0.50,
+        size.width * 0.63, size.height * 0.38);
+
+    path_0.close();
+    return path_0;
+  }
+
+  static Path retPath8(Size size) {
+    Path path_0 = Path();
+    path_0.moveTo(size.width * 0.50, size.height * 0.13);
+    path_0.quadraticBezierTo(size.width * 0.32, size.height * 0.18,
+        size.width * 0.35, size.height * 0.38);
+    path_0.quadraticBezierTo(size.width * 0.41, size.height * 0.48,
+        size.width * 0.50, size.height * 0.50);
+    path_0.quadraticBezierTo(size.width * 0.35, size.height * 0.54,
+        size.width * 0.33, size.height * 0.70);
+    path_0.cubicTo(size.width * 0.34, size.height * 0.78, size.width * 0.37,
+        size.height * 0.81, size.width * 0.50, size.height * 0.88);
+    path_0.cubicTo(size.width * 0.66, size.height * 0.83, size.width * 0.68,
+        size.height * 0.78, size.width * 0.70, size.height * 0.70);
+    path_0.quadraticBezierTo(size.width * 0.69, size.height * 0.53,
+        size.width * 0.53, size.height * 0.50);
+    path_0.quadraticBezierTo(size.width * 0.62, size.height * 0.47,
+        size.width * 0.65, size.height * 0.38);
+    path_0.quadraticBezierTo(size.width * 0.69, size.height * 0.18,
+        size.width * 0.50, size.height * 0.13);
+    path_0.close();
+    return path_0;
+  }
+
+  static Path retPath7(Size size) {
+    Path path_0 = Path();
+    path_0.moveTo(size.width * 0.25, size.height * 0.25);
+    path_0.quadraticBezierTo(size.width * 0.53, size.height * 0.25,
+        size.width * 0.63, size.height * 0.25);
+    path_0.quadraticBezierTo(size.width * 0.47, size.height * 0.42,
+        size.width * 0.38, size.height * 0.75);
+
+    return path_0;
+  }
+
+  static Path retPath6(Size size) {
+    Path path_0 = Path();
+    path_0.moveTo(size.width * 0.70, size.height * 0.23);
+    path_0.quadraticBezierTo(size.width * 0.60, size.height * 0.11,
+        size.width * 0.50, size.height * 0.13);
+    path_0.cubicTo(size.width * 0.34, size.height * 0.14, size.width * 0.25,
+        size.height * 0.31, size.width * 0.30, size.height * 0.55);
+    path_0.quadraticBezierTo(size.width * 0.34, size.height * 0.72,
+        size.width * 0.50, size.height * 0.75);
+    path_0.quadraticBezierTo(size.width * 0.67, size.height * 0.72,
+        size.width * 0.72, size.height * 0.57);
+    path_0.cubicTo(size.width * 0.71, size.height * 0.49, size.width * 0.67,
+        size.height * 0.39, size.width * 0.50, size.height * 0.38);
+    path_0.quadraticBezierTo(size.width * 0.36, size.height * 0.42,
+        size.width * 0.30, size.height * 0.55);
+    return path_0;
+  }
+
+  static Path retPath5(Size size) {
+    Path path_0 = Path();
+    path_0.moveTo(size.width * 0.63, size.height * 0.25);
+    path_0.lineTo(size.width * 0.25, size.height * 0.25);
+    path_0.quadraticBezierTo(size.width * 0.25, size.height * 0.50,
+        size.width * 0.25, size.height * 0.55);
+    path_0.cubicTo(size.width * 0.39, size.height * 0.46, size.width * 0.54,
+        size.height * 0.47, size.width * 0.60, size.height * 0.57);
+    path_0.cubicTo(size.width * 0.62, size.height * 0.66, size.width * 0.62,
+        size.height * 0.70, size.width * 0.57, size.height * 0.75);
+    path_0.quadraticBezierTo(size.width * 0.45, size.height * 0.83,
+        size.width * 0.25, size.height * 0.75);
+    return path_0;
+  }
+
+  static Path retPath4(Size size) {
+    Path path_0 = Path();
+    path_0.moveTo(size.width * 0.63, size.height * 0.88);
+    path_0.quadraticBezierTo(size.width * 0.63, size.height * 0.41,
+        size.width * 0.63, size.height * 0.25);
+    path_0.cubicTo(size.width * 0.52, size.height * 0.25, size.width * 0.28,
+        size.height * 0.51, size.width * 0.25, size.height * 0.63);
+    path_0.quadraticBezierTo(size.width * 0.38, size.height * 0.63,
+        size.width * 0.75, size.height * 0.63);
+    return path_0;
+  }
+
+  static Path retPath3(Size size) {
+    Path path_0 = Path();
+    path_0.moveTo(size.width * 0.30, size.height * 0.35);
+    path_0.quadraticBezierTo(size.width * 0.36, size.height * 0.25,
+        size.width * 0.50, size.height * 0.25);
+    path_0.cubicTo(size.width * 0.60, size.height * 0.25, size.width * 0.66,
+        size.height * 0.32, size.width * 0.68, size.height * 0.40);
+    path_0.quadraticBezierTo(size.width * 0.69, size.height * 0.54,
+        size.width * 0.42, size.height * 0.57);
+    path_0.quadraticBezierTo(size.width * 0.69, size.height * 0.58,
+        size.width * 0.68, size.height * 0.75);
+    path_0.cubicTo(size.width * 0.67, size.height * 0.80, size.width * 0.61,
+        size.height * 0.86, size.width * 0.50, size.height * 0.88);
+    path_0.cubicTo(size.width * 0.40, size.height * 0.87, size.width * 0.37,
+        size.height * 0.83, size.width * 0.30, size.height * 0.78);
+    return path_0;
+  }
+
+  static Path retPath2(Size size) {
+    Path path_0 = Path();
+    path_0.moveTo(size.width * 0.25, size.height * 0.25);
+    path_0.quadraticBezierTo(size.width * 0.27, size.height * 0.14,
+        size.width * 0.47, size.height * 0.13);
+    path_0.cubicTo(size.width * 0.65, size.height * 0.12, size.width * 0.72,
+        size.height * 0.23, size.width * 0.72, size.height * 0.33);
+    path_0.cubicTo(size.width * 0.72, size.height * 0.43, size.width * 0.61,
+        size.height * 0.46, size.width * 0.25, size.height * 0.75);
+    path_0.quadraticBezierTo(size.width * 0.38, size.height * 0.75,
+        size.width * 0.75, size.height * 0.75);
+    return path_0;
+  }
+
+  static Path retPath1(Size size) {
+    Path path_0 = Path();
+    path_0.moveTo(size.width * 0.45, size.height * 0.30);
+    path_0.lineTo(size.width * 0.50, size.height * 0.20);
+    path_0.lineTo(size.width * 0.50, size.height * 0.30);
+    path_0.lineTo(size.width * 0.50, size.height * 0.40);
+    path_0.lineTo(size.width * 0.50, size.height * 0.50);
+    path_0.lineTo(size.width * 0.45, size.height * 0.50);
+    path_0.lineTo(size.width * 0.55, size.height * 0.50);
+    return path_0;
+  }
 }
